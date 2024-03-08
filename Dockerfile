@@ -1,4 +1,5 @@
-FROM python:3.12.2-slim-bookworm
+#FROM python:3.12.2-slim-bookworm
+FROM python:3.12.2-alpine3.19
 WORKDIR /app
 COPY poetry.lock pyproject.toml ./
 RUN python -m pip install --no-cache-dir poetry==1.4.2 \
