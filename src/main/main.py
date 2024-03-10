@@ -7,23 +7,20 @@ from aiogram import Bot, Dispatcher
 from aiogram.filters import CommandStart
 from aiogram.types import Message
 
-TOKEN = getenv("BOT_TOKEN")
+token = getenv("BOT_TOKEN")
 dp = Dispatcher()
 
 
 @dp.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
-    """
-    This handler receives messages with `/start` command
-    """
+    # This handler receives messages with `/start` command
     await message.answer("Привет! Ты можешь использовать команды")
 
 
 async def main() -> None:
-    # Initialize Bot instance with a
-    # default parse mode which will be passed to all API calls
-    bot = Bot(TOKEN)
-    # And the run events dispatching
+    # Initialize bot instance
+    bot = Bot(token)
+    # Runs events dispatching
     await dp.start_polling(bot)
 
 
