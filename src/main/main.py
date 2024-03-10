@@ -14,7 +14,7 @@ dp = Dispatcher()
 @dp.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
     # This handler receives messages with `/start` command
-    await message.answer("Привет! Ты можешь использовать команды")
+    await message.answer("Привет! Ты можешь использовать команду")
 
 
 async def main() -> None:
